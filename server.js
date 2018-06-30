@@ -17,7 +17,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 app.use(express.static('./public'));
 
-mongoose.connect(process.env.MONGDB_URI ||"mongodb://localhost/nyt-react");
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/nyt-react");
 
 
 var db = mongoose.connection;
