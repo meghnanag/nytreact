@@ -6,13 +6,10 @@
   },
   "description": "",
   "main": "public/index.html",
-  "scripts": {
-    "start": "node server.js",
-    "client": "cd client && yarn start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "dev:server": "cd client && yarn build && cd .. && NODE_ENV=production yarn start",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+  "scripts": {   "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack & node server",
+    "start": "node server",
+    "build": "webpack"
   },
   "author": "Meghna Nag",
   "license": "ISC",
