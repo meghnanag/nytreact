@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-var Article = require('./models/Article.js');
+
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -18,7 +18,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(express.static('./public'));
 
 mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/nyt-react");
-
+var Article = require('./models/Article.js');
 
 var db = mongoose.connection;
 
