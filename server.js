@@ -17,13 +17,8 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 app.use(express.static('./public'));
 
+mongoose.connect(process.env.MONGDB_URI ||"mongodb://localhost/nyt-react");
 
-var databaseUri = "mongodb://localhost/nyt-react"; 
-if (process.env.PORT) {
-  connectionString = "mongodb://heroku_0v4n4xwk:aj6cmh5b5fataptd4bn0q6cniu@ds125001.mlab.com:25001/heroku_0v4n4xwk"; 
-} else {
-  mongoose.connect(databaseUri)
-}
 
 var db = mongoose.connection;
 
